@@ -3,11 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Car</title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
 </head>
 <body>
     <img width="25%" th:src="@{/images/car.jpg}">
     <h3>Please enter car information:</h3>
     <form method="post" th:action="@{/cars}" th:object="${car}">
+
+        <label for="brand">Brand: </label>
+        <input id="brand" type="text" th:field="*{brand}">
+        <br>
+
+        <label for="model">Model: </label>
+        <input id="model" type="text" th:field="*{model}">
+        <br>
+
+        <label for="power">Power: </label>
+        <input id="power" type="text" th:field="*{power}">
+        <br>
+
+        <label for="produced">Produced: (yyyy-mm) </label>
+        <input id="produced" type="text" th:field="*{produced}">
+        <br>
+
         <input type="submit" value="submit car infos">
     </form>
 </body>
